@@ -66,7 +66,7 @@ class MyCustomPainter extends CustomPainter {
     canvas.drawPath(redPath, paint);
 
     Path orangePath = Path();
-    orangePath.moveTo(0, size.height * 0.8);
+    orangePath.moveTo(0, size.height * 0.75);
     orangePath.quadraticBezierTo(size.width * .15, size.height * 0.9, size.width * 0.3, size.height);
     orangePath.lineTo(0, size.height);
     orangePath.close();
