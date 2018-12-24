@@ -34,33 +34,36 @@ class PainterScreen extends StatelessWidget {
   }
 }
 
-class MyCustomPainter extends CustomPainter{
+class MyCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint();
     Path mainBGPath = Path();
-    mainBGPath.addRect(Rect.fromLTWH(0.0 , 0.0, size.width, size.height));
+    mainBGPath.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
     paint.color = mainBGColor;
     canvas.drawPath(mainBGPath, paint);
-    
-    Path trianglePath = Path();
-    trianglePath.lineTo(size.width*.25, 0);
-    trianglePath.lineTo(0, size.height);
-    trianglePath.close();
 
+    Path trianglePath = Path();
+    trianglePath.lineTo(size.width * .25, 0);
+    trianglePath.lineTo(0, size.height * .25);
+    trianglePath.close();
     paint.color = cyan;
     canvas.drawPath(trianglePath, paint);
-
+    
+    Path purplePath = Path();
+    purplePath.lineTo(size.width*0.40, 0);
+    purplePath.quadraticBezierTo(size.width *.25, size.height * .3, 0, size.height*.5);
+    purplePath.close();
+    paint.color = purpleColor;
+    canvas.drawPath(purplePath, paint);
+    
   }
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
-
     return oldDelegate != this;
   }
-
 }
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
