@@ -43,20 +43,28 @@ class MyCustomPainter extends CustomPainter {
     paint.color = mainBGColor;
     canvas.drawPath(mainBGPath, paint);
 
+    Path purplePath = Path();
+    purplePath.lineTo(size.width * 0.45, 0);
+    purplePath.quadraticBezierTo(
+        size.width * .25, size.height * .3, 0, size.height * .55);
+    purplePath.close();
+    paint.color = purpleColor;
+    canvas.drawPath(purplePath, paint);
+
+    Path redPath = Path();
+    redPath.moveTo(size.width - (size.width * 0.9), 0.0);
+    redPath.lineTo(size.width, size.height);
+    redPath.lineTo(0, size.height);
+    redPath.close();
+    paint.color = redColor;
+    canvas.drawPath(redPath, paint);
+
     Path trianglePath = Path();
     trianglePath.lineTo(size.width * .25, 0);
     trianglePath.lineTo(0, size.height * .25);
     trianglePath.close();
     paint.color = cyan;
     canvas.drawPath(trianglePath, paint);
-    
-    Path purplePath = Path();
-    purplePath.lineTo(size.width*0.40, 0);
-    purplePath.quadraticBezierTo(size.width *.25, size.height * .3, 0, size.height*.5);
-    purplePath.close();
-    paint.color = purpleColor;
-    canvas.drawPath(purplePath, paint);
-    
   }
 
   @override
