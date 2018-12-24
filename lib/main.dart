@@ -54,6 +54,10 @@ class MyCustomPainter extends CustomPainter {
     Path redPath = Path();
     redPath.moveTo(size.width - (size.width * 0.1), 0.0);
     redPath.quadraticBezierTo(size.width * .5, size.height * .4 , 0, size.height - (size.height * 0.2));
+
+    redPath.lineTo(0, size.height);
+    redPath.lineTo(size.width * .25, size.height);
+    redPath.quadraticBezierTo(size.width * .5, size.height * .7 , size.width , size.height * 0.6);
 //    redPath.lineTo(size.width, size.height);
 //    redPath.lineTo(0, size.height);
     redPath.close();
