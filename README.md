@@ -1,6 +1,3 @@
-# flutter_painter101
-
-A new Flutter application.
 
 ## Getting Started
 
